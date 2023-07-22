@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TextField3D</title>
+  <style>
+    
+  </style>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="works/textfield3d/css/bulma.min.css">
+  <link rel="stylesheet" href="works/textfield3d/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="works/textfield3d/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="works/textfield3d/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="works/textfield3d/css/index.css">
+  <link rel="icon" href="works/textfield3d/images/3d.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="works/textfield3d/js/fontawesome.all.min.js"></script>
+  <script src="works/textfield3d/js/bulma-carousel.min.js"></script>
+  <script src="works/textfield3d/js/bulma-slider.min.js"></script>
+  <script src="works/textfield3d/js/index.js"></script>
+</head>
+<body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav> -->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">TextField3D: Towards Enhancing Open-World 3D Generation in Noisy Text Fields</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Tianyu Huang<sup>1,3</sup>,</span>
+            <span class="author-block">
+              Yihan Zeng<sup>2</sup>,</span>
+            <span class="author-block">
+              Bowen Dong<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Hang Xu<sup>2</sup>,
+            </span>
+            <span class="author-block">
+              Songcen Xu<sup>2</sup>,
+            </span>
+            <span class="author-block">
+              Rynson W.H. Lau<sup>3</sup>,
+            </span>
+            <span class="author-block">
+              Wangmeng Zuo<sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Harbin Institute of Technology,</span>
+            <span class="author-block"><sup>2</sup>Huawei Noah's Ark Lab,</span>
+            <span class="author-block"><sup>3</sup>City University of Hong Kong</span>
+          </div>
+
+          <div class="column has-text-centered">
+            We will release the paper and codes soon!
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="works/textfield3d/pdf/paper.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+                <p class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </p>
+              </span> -->
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+                </span> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body" style="text-align: center; width: 100%;">
+      <img id="teaser" width="80%" src="works/textfield3d/images/intro.png" type="image/png"
+           style="display: inline-block; margin-top: -2%; margin-bottom: -8%;"></img>
+      <!-- <h2 class="subtitle has-text-centered">
+        The motivation of <span class="dnerf">Noisy Text Fields</span>. Given the text prompt "A table", tables in 3D data are placed in clean backgrounds, while 2D generations present various tables in complex scenes. Expression fields of 3D text latent code are more likely to change by variation of textual descriptions.
+      </h2> -->
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Generative models have shown remarkable progress in 3D aspect. Recent works learn 3D representation explicitly under text-3D guidance.
+            However, the limited scale of text-3D pair data restricts the generative diversity and text control of models.
+            Generators may easily fall into a stereotype concept for certain text prompts, thus losing open-world generation ability.
+          </p>
+          <p>
+            To tackle this issue, we introduce an open-world 3D generative model namely TextField3D.
+            Specifically, rather than using the text prompts as input directly, we suggest to inject dynamic noise into the expressive fields of given text prompts, i.e., Noisy Text Fields (NTFs).
+            In this way, limited 3D data can be mapped to potential textual latent space that is expanded by NTFs. Accordingly, a novel NTFGen module is proposed to model open-world text latent code in the noisy fields.
+            Besides, we propose a novel NTFBind module to support image conditional 3D generation, which aligns view-invariant image latent code to the noisy fields. We then feed the obtained latent codes into a differentiable 3D representation, generating corresponding 3D products.
+            To guide the conditional generation in both geometry and texture, multi-modal discrimination is constructed with a text-3D discriminator and a text-2.5D discriminator.
+          </p>
+          <p>
+            Compared to previous methods, TextField3D includes three merits:
+            1) generation diversity, 2) text consistency, and 3) low latency.
+            Extensive experiments demonstrate that our method obtains an open-world 3D generation capability, in terms of generation diversity and text-control complexity.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Compare with SOTA</h2>
+        <img id="teaser" width="100%" src="works/textfield3d/images/sota.png" type="image/png"
+           style="display: inline-block; margin-top: -2%; margin-bottom: -8%;"></img>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero is-light is-small" style="width: 67%; margin: 0 auto;"> -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title">Gallery</h2>
+  <div class="hero-body">
+    <div class="container" style="width: 100%; text-align: center;">
+      <div id="results-carousel" class="carousel results-carousel" style="width: 100%; margin: 0 auto;">
+        <div class="item item-steve" style="text-align: center;">
+          <img height="100%" src="works/textfield3d/gif/apple.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">an apple</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center;">
+          <img height="100%" src="works/textfield3d/gif/barrel.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">a barrel</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center;">
+          <img height="100%"  src="works/textfield3d/gif/green_teapot.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">a green teapot</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center;">
+          <img height="100%" src="works/textfield3d/gif/beer.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">a can of beer</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center;">
+          <img height="100%" src="works/textfield3d/gif/brick_chimney.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">a brick chimney</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center; ">
+          <img poster="" id="steve" width="100%" src="works/textfield3d/gif/canister.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">a rusty metal canist</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center; ">
+          <img poster="" id="steve" width="100%" src="works/textfield3d/gif/cardboard_box.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">a cardboard box with graffiti</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center;">
+          <img poster="" id="steve" width="100%" src="works/textfield3d/gif/chess_piece.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">a chess piece</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center;">
+          <img poster="" id="steve" width="100%" src="works/textfield3d/gif/deer.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">a deer</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center;">
+          <img poster="" id="steve" width="100%" src="works/textfield3d/gif/egyptian_obelisk.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">an egyptian
+            obelis </h2>
+        </div>
+        <div class="item item-steve" style="text-align: center;">
+          <img poster="" id="steve" width="100%" src="works/textfield3d/gif/giraffe.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">a giraffe</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center;">
+          <img poster="" id="steve" width="100%" src="works/textfield3d/gif/golden_ring.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">a golden ring</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center;">
+          <img poster="" id="steve" width="100%" src="works/textfield3d/gif/grenade.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">a grenade</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center;">
+          <img poster="" id="steve" width="100%" src="works/textfield3d/gif/ice_cream_cone.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">an ice cream cone</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center;">
+          <img poster="" id="steve" width="100%" src="works/textfield3d/gif/large_axe.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">a large axe</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center;">
+          <img poster="" id="steve" width="100%" src="works/textfield3d/gif/lego_model_of_a_rocket.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">a lego model of a rocket</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center;">
+          <img poster="" id="steve" width="100%" src="works/textfield3d/gif/lemon.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">a lemon</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center;">
+          <img poster="" id="steve" width="100%" src="works/textfield3d/gif/orange.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">an orange</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center;">
+          <img poster="" id="steve" width="100%" src="works/textfield3d/gif/pagoda.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">a pagoda</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center;">
+          <img poster="" id="steve" width="100%" src="works/textfield3d/gif/pottery_vase.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">a pottery vase</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center;">
+          <img poster="" id="steve" width="100%" src="works/textfield3d/gif/rat.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">a rat</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center;">
+          <img poster="" id="steve" width="100%" src="works/textfield3d/gif/red_mushroom.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">a red mushroom</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center;">
+          <img poster="" id="steve" width="100%" src="works/textfield3d/gif/screw.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">a screw</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center;">
+          <img poster="" id="steve" width="100%" src="works/textfield3d/gif/tire.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">a tire</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center;">
+          <img poster="" id="steve" width="100%" src="works/textfield3d/gif/tree_stump.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">a tree stump</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center;">
+          <img poster="" id="steve" width="100%" src="works/textfield3d/gif/tree.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">a tree</h2>
+        </div>
+        <div class="item item-steve" style="text-align: center;">
+          <img poster="" id="steve" width="100%" src="works/textfield3d/gif/wooden_crate.gif" type="image/gif"></img>
+          <h2 style="font-size:16px;" class="subtitle has-text-centered">a wooden crate</h2>
+        </div>
+        <!-- <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="works/textfield3d/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="works/textfield3d/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="works/textfield3d/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="works/textfield3d/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      <!-- @article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+} -->
+</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Thanks for the templates from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
