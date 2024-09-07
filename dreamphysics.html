@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="DreamPhysics: Learning Physics-Based 3D Dynamics with Video Diffusion Priors">
+  <meta name="keywords" content="3DGS, Physics">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DreamPhysics: Learning Physics-Based 3D Dynamics with Video Diffusion Priors</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/app.css">
+  <link rel="icon" href="./static/images/icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/video_comparison.js"></script>
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">DreamPhysics: Learning Physics-Based 3D Dynamics with Video Diffusion Priors</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://tyhuang0428.github.io/">Tianyu Huang</a><sup>1,2</sup>,</span>
+              <span class="author-block">
+                <a href="https://openreview.net/profile?id=~Haoze_Zhang1">Haoze Zhang</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=YiDxCoAAAAAJ&hl">Yihan Zeng</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=8pIq2N0AAAAJ&hl">Zhilu Zhang</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="http://homepage.hit.edu.cn/lihui">Hui Li</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="http://homepage.hit.edu.cn/wangmengzuo">Wangmeng Zuo</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.cs.cityu.edu.hk/~rynson/">Rynson W.H. Lau</a><sup>1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>City University of Hong Kong,</span>
+              <span class="author-block"><sup>2</sup>Harbin Institute of Technology,</span>
+              <span class="author-block"><sup>3</sup>Noah's Ark Lab, Huawei</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2406.01476" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/tyhuang0428/DreamPhysics"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-ketchup">
+            <video poster="" id="ketchup" autoplay controls muted loop playsinline height="100%">
+              <source src="./videos/ours/7.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-ketchup">
+            <video poster="" id="ketchup" autoplay controls muted loop playsinline height="100%">
+              <source src="./videos/ours/6.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-ketchup">
+            <video poster="" id="ketchup" autoplay controls muted loop playsinline height="100%">
+              <source src="./videos/ours/5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-ketchup">
+            <video poster="" id="ketchup" autoplay controls muted loop playsinline height="100%">
+              <source src="./videos/ours/1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-ketchup">
+            <video poster="" id="ketchup" autoplay controls muted loop playsinline height="100%">
+              <source src="./videos/ours/2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-ketchup">
+            <video poster="" id="ketchup" autoplay controls muted loop playsinline height="100%">
+              <source src="./videos/ours/3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-ketchup">
+            <video poster="" id="ketchup" autoplay controls muted loop playsinline height="100%">
+              <source src="./videos/ours/4.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Dynamic 3D interaction has been attracting a lot of attention recently. 
+              However, creating such 4D content remains challenging. 
+              One solution is to animate 3D scenes with physics-based simulation, which requires manually assigning 
+              precise physical properties to the object or the simulated results would become unnatural. 
+              Another solution is to learn the deformation of 3D objects with the distillation of video generative models, 
+              which, however, tends to produce 3D videos with small and discontinuous motions due to the 
+              inappropriate extraction and application of physical prior. In this work, combining the strengths and complementing 
+              shortcomings of the above two solutions, we propose to learn the physical properties of a material field with video 
+              diffusion priors, and then utilize a physics-based Material-Point-Method (MPM) simulator to generate 4D content with 
+              realistic motions. In particular, we propose motion distillation sampling to emphasize video motion information during 
+              distillation. Moreover, to facilitate the optimization, we further propose a KAN-based material field with frame boosting. 
+              Experimental results demonstrate that our method enjoys more realistic motion than state-of-the-arts.
+            </p>
+          </div>
+        </div>
+      </div>
+      <img src="./static/pipeline.png" class="interpolation-image" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Comparison with State-Of-The-Arts</h2>
+      <br>
+      <div class="content has-text-centered">
+        <div class="word-container">
+          <div class="word">GT</div>
+          <div class="word">Ours</div>
+          <div class="word">PhysDreamer</div>
+          <div class="word">PhysGaussian</div>
+          <div class="word">DreamGaussian</div>
+        </div>
+        <video id="replay-video" controls muted preload playsinline autoplay loop width="100%">
+          <source src="./videos/compare_with_sota/1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="content has-text-centered">
+        <video id="replay-video" controls muted preload playsinline autoplay loop width="100%">
+          <source src="./videos/compare_with_sota/2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="content has-text-centered">
+        <video id="replay-video" controls muted preload playsinline autoplay loop width="100%">
+          <source src="./videos/compare_with_sota/3.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="content has-text-centered">
+        <video id="replay-video" controls muted preload playsinline autoplay loop width="100%">
+          <source src="./videos/compare_with_sota/4.mp4" type="video/mp4">
+        </video>
+      </div>
+      <!-- </div> -->
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Ablation Study</h2>
+      <br>
+      <!-- <div class="col-md-8 col-md-offset-2"> -->
+      <div class="content has-text-centered">
+        <div class="word-container1">
+          <div class="word1">(a)</div>
+          <div class="word1">(b)</div>
+          <div class="word1">(c)</div>
+          <div class="word1">Ours</div>
+        </div>
+        <video id="replay-video" controls muted preload playsinline autoplay loop width="100%">
+          <source src="./videos/ablation_study/1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="content has-text-centered">
+        <video id="replay-video" controls muted preload playsinline autoplay loop width="100%">
+          <source src="./videos/ablation_study/2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="content has-text-centered">
+        <video id="replay-video" controls muted preload playsinline autoplay loop width="100%">
+          <source src="./videos/ablation_study/3.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="content has-text-centered">
+        <video id="replay-video" controls muted preload playsinline autoplay loop width="100%">
+          <source src="./videos/ablation_study/4.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="content has-text-centered">
+        <video id="replay-video" controls muted preload playsinline autoplay loop width="100%">
+          <source src="./videos/ablation_study/5.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="content has-text-centered">
+        <video id="replay-video" controls muted preload playsinline autoplay loop width="100%">
+          <source src="./videos/ablation_study/6.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="content has-text-centered">
+        <video id="replay-video" controls muted preload playsinline autoplay loop width="100%">
+          <source src="./videos/ablation_study/7.mp4" type="video/mp4">
+        </video>
+      </div>
+      <!-- </div> -->
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{huang2024dreamphysics,
+        title={DreamPhysics: Learning Physical Properties of Dynamic 3D Gaussians with Video Diffusion Priors},
+        author={Huang, Tianyu and Zeng, Yihan and Li, Hui and Zuo, Wangmeng and Lau, Rynson WH},
+        journal={arXiv preprint arXiv:2406.01476},
+        year={2024}
+      }</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              The source code of this website is borrowed from <a
+                href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+              We thank the authors for sharing the template.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
